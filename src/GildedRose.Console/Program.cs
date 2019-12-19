@@ -42,7 +42,7 @@ namespace GildedRose.Console
                 {
                     if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                        if ((Items[i].Name != "Sulfuras, Hand of Ragnaros") && (Items[i].Name != "Conjured"))
                         {
                             Items[i].Quality = Items[i].Quality - 1;
                         }
@@ -88,9 +88,13 @@ namespace GildedRose.Console
                         {
                             if (Items[i].Quality > 0)
                             {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                                if ((Items[i].Name != "Sulfuras, Hand of Ragnaros") && (Items[i].Name != "Conjured"))
                                 {
                                     Items[i].Quality = Items[i].Quality - 1;
+                                }
+                                else if (Items[i].Name == "Conjured")
+                                {
+                                    Items[i].Quality = Items[i].Quality - 2;
                                 }
                             }
                         }
