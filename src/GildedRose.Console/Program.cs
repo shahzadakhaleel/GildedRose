@@ -23,7 +23,9 @@ namespace GildedRose.Console
                                                       SellIn = 15,
                                                       Quality = 20
                                                   },
-                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6},
+                                              new Item {Name = "Conjured", SellIn = 10, Quality = 10}
+
                                           }
 
                           };
@@ -46,6 +48,10 @@ namespace GildedRose.Console
                         {
                             Items[i].Quality = Items[i].Quality - 1;
                         }
+                        else if (Items[i].Name == "Conjured")
+                        {
+                            Items[i].Quality = Items[i].Quality - 2;
+                        }
                     }
                 }
                 else
@@ -54,7 +60,7 @@ namespace GildedRose.Console
                     {
                         Items[i].Quality = Items[i].Quality + 1;
 
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                        if ((Items[i].Name == "Backstage passes to a TAFKAL80ETC concert") || (Items[i].Name == "Aged Brie"))
                         {
                             if (Items[i].SellIn < 11)
                             {
